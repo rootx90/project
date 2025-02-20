@@ -29,13 +29,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Submenu Toggle Functionality
   const submenuToggles = document.querySelectorAll(".sidebar-link");
+  let currentlyOpenSubmenu = null; // Track the currently open submenu
+
   submenuToggles.forEach((toggle) => {
     toggle.addEventListener("click", function (e) {
       const submenu = this.nextElementSibling; // Get the next sibling (submenu)
+
+      // If the clicked link has a submenu
       if (submenu && submenu.classList.contains("sidebar-submenu")) {
         e.preventDefault(); // Prevent default link behavior
-        submenu.classList.toggle("active"); // Toggle active class on submenu
-        this.classList.toggle("active"); // Toggle active class on parent link
+
+        // Close the currently open submenu (if any)
+        if (currentlyOpenSubmenu && currentlyOpenSubmenu !== submenu) {
+          currentlyOpenSubmenu.classList.remove("active");
+          currentlyOpenSubmenu.previousElementSibling.classList.remove("active");
+        }
+
+        // Toggle the clicked submenu
+        const isActive = submenu.classList.toggle("active");
+        this.classList.toggle("active");
+
+        // Update the currently open submenu reference
+        currentlyOpenSubmenu = isActive ? submenu : null;
       }
     });
   });
