@@ -23,10 +23,16 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
             <!-- Daily Data -->
             <li class="<?php echo ($current_page == 'daily-data.php') ? 'active' : ''; ?>">
-                <a href="../pages/daily-data.php" class="sidebar-link">
+                <a href="daily-data.php" class="sidebar-link">
                     <i class="fas fa-calendar-day"></i>
                     <span>البيانات اليومية</span>
                 </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="../pages/daily-data.php">العيادات</a></li>
+                    <li><a href="#">القسم الداخلي</a></li>
+                    <li><a href="#">الرعايات</a></li>
+                    <li><a href="#">الحضانات</a></li>
+                </ul>
             </li>
 
             <!-- Monthly Data -->
@@ -52,6 +58,55 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <ul class="sidebar-submenu">
                     <li><a href="../pages/dashboard.php">لوحة الادارة</a></li>
                     <li><a href="#">dashboard month</a></li>
+                </ul>
+            </li>
+
+            <!-- Tables -->
+            <li class="<?php echo (in_array($current_page, ['basic-table.php', 'data-table.php'])) ? 'active' : ''; ?>">
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-table"></i>
+                    <span>Tables</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="#">Basic Table</a></li>
+                    <li><a href="#">Data Table</a></li>
+                </ul>
+            </li>
+
+            <!-- Forms -->
+            <li class="<?php echo (in_array($current_page, ['basic-form.php', 'advanced-form.php'])) ? 'active' : ''; ?>">
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-edit"></i>
+                    <span>Forms</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="#">Basic Form</a></li>
+                    <li><a href="#">Advanced Form</a></li>
+                </ul>
+            </li>
+
+            <!-- Charts -->
+            <li class="<?php echo (in_array($current_page, ['chartjs.php', 'flot-chart.php', 'peity-chart.php'])) ? 'active' : ''; ?>">
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Charts</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="#">Chart JS</a></li>
+                    <li><a href="#">Flot Chart</a></li>
+                    <li><a href="#">Peity Chart</a></li>
+                </ul>
+            </li>
+
+            <!-- Extras -->
+            <li class="<?php echo (in_array($current_page, ['login.php', 'register.php', 'forget-pass.php'])) ? 'active' : ''; ?>">
+                <a href="#" class="sidebar-link">
+                <i class="fa-solid fa-file-alt"></i>                    <span>التقارير</span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="#">البيانات اليومية</a></li>
+                    <li><a href="#">البيانات الشهرية</a></li>
+                    <li><a href="#">  </a></li>
                 </ul>
             </li>
         </ul>
