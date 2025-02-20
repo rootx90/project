@@ -172,27 +172,27 @@ h1 {
   right: 0px;
 }
 /* Footer Styling */
-.site-footer , p {
-  background-color: var(--primary-color);
+.site-footer {
+  background-color: var(--primary-color); /* Use the primary color from :root */
   color: white;
-  text-align: center;
-  padding: 1rem 0;
+  text-align: center; /* Center-align the text */
+  padding: 1rem 0; /* Add vertical padding */
   position: relative;
   bottom: 0;
-  width: 100%;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure it spans the full width */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for separation */
 }
+
 .footer-content {
   font-size: 0.9rem;
-  margin: 0 auto;
-  text-align: center;
-
-  max-width: 1200px;
-}
-.footer-content , p{
-  text-align: center;
+  margin: 0 auto; /* Center the content horizontally */
+  max-width: 1200px; /* Limit the width for larger screens */
 }
 
+.site-footer p {
+  margin: 0; /* Remove default margins for cleaner spacing */
+  font-weight: 400;
+}
 .btn-icon {
   background: none;
   border: none;
